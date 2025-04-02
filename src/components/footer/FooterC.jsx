@@ -1,15 +1,38 @@
-
+import React from 'react';
+import './FooterC.css';
+import { NavLink } from 'react-router-dom';
 
 const FooterC = () => {
   return (
-   <>
-   <footer className="bg-body-tertiary py-5 text-center">
-     <h3>footer</h3>
+    <footer className="footer-container">
+      <div className="footer-content">
+        <div className="footer-logo">
+          <div className="logo">
+            <span className="tech">TECH</span>
+            <span className="store">STORE</span>
+          </div>
+        </div>
 
-   </footer>
-   
-   </>
-  )
-}
+        <div className="footer-social">
+          <h3>Redes</h3>
+          <ul>
+            <li><NavLink to="*">Facebook</NavLink></li>
+            <li><NavLink to="*">Twitter</NavLink></li>
+            <li><NavLink t="*">Instagram</NavLink></li>
+          </ul>
+        </div>
 
-export default FooterC
+        <div className="footer-legal">
+          <h3>Legales</h3>
+          <ul>
+            <li><NavLink to="*">Términos y condiciones</NavLink></li>
+            <li><NavLink to="*">Política de privacidad</NavLink></li>
+            <li><NavLink to="*">Aviso legal</NavLink></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default FooterC;

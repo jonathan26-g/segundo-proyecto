@@ -3,24 +3,25 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavbarC.css'; // Archivo CSS para estilos personalizados
+import { NavLink } from 'react-router-dom';
 
 const NavbarC = () => {
   return (
     <>   
     <Navbar expand="lg" className="custom-navbar py-5" >
       <Container>
-        <Navbar.Brand href="#home" className="brand-logo">TechStore</Navbar.Brand>
+        <NavLink href="#home" className="brand-logo">TechStore</NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="/" className="custom-link">Inicio</Nav.Link>
-            <Nav.Link href="/AboutUs" className="custom-link">Sobre Nosotros</Nav.Link>
-            <Nav.Link href="#contact" className="custom-link">Contacto</Nav.Link>
+            <NavLink to="/" className="custom-link text-decoration-none">Inicio</NavLink>
+            <NavLink to="/AboutUs" className="custom-link text-decoration-none">Sobre Nosotros</NavLink>
+            <NavLink to="/Contact" className="custom-link text-decoration-none">Contacto</NavLink>
           </Nav>
 
           <Nav className="ms-auto">
-            <Nav.Link href="#login" className="custom-link">Iniciar Sesión</Nav.Link>
-            <Nav.Link href="#signup" className="custom-link">Registrarse</Nav.Link>
+            <NavLink to="/LoginPage" className="custom-link text-decoration-none">Iniciar Sesión</NavLink>
+            <NavLink to="/RegisterPage" className="custom-link text-decoration-none">Registrarse</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

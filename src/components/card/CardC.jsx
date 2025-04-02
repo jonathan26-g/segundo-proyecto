@@ -1,28 +1,34 @@
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
-import './CardC.css'
+import './CardC.css';
+import { Link } from 'react-router-dom';
 
-const CardC = () => {
+
+const CardC = ({ urlImage, alt, titulo, descripcion, idProducto, precio }) => {
   return (
-    <>
-   <Card >
-      <Card.Img variant="top" src="https://png.pngtree.com/thumb_back/fh260/background/20230521/pngtree-sunflower-full-screen-backdrop-widescreen-photos-image_2684387.jpg" />
+    <Card className="product-card">
+      <div className="card-img-container">
+        <Card.Img variant="top" src={urlImage} alt={alt} />
+        <div className="card-overlay">
+          <Link to={`/productDetail/${idProducto}`} className="view-details-btn">
+            Ver Detalle
+          </Link>
+        </div>
+      </div>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <div className="card-price-tag">${precio}</div>
+        <Card.Title className="product-title">{titulo}</Card.Title>
+        <Card.Text className="product-description">
+          {descripcion}
         </Card.Text>
-       <div className='text-center'>
-       <Button variant="primary">Ver mas</Button>
-       </div>
+        <div className="card-actions">
+          <Link to={`/productDetail/${idProducto}`} className="btn btn-primary card-btn">
+            
+          </Link>
+        </div>
       </Card.Body>
-    </Card> 
-    
-    
-    
-    </>
-  )
-}
+    </Card>
+  );
+};
 
-export default CardC
+export default CardC;

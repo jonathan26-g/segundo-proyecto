@@ -3,12 +3,17 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import NavbarC from "./components/navbar/NavbarC";
 import FooterC from "./components/footer/FooterC";
-import LoginPage from "./LoginPage";
+import LoginPage from "./pages/LoginPage";
 import ProductDetail from "./pages/ProductDetail";
 import RegisterPage from "./pages/RegisterPage";
 import Contact from "./pages/Contact"
+
+
 function App() {
     return (
+
+        <>
+     
         <Router>
             <NavbarC/>
             <Routes>
@@ -22,6 +27,7 @@ function App() {
 
             <FooterC/>
         </Router>
+        </>
     );
 }
 
