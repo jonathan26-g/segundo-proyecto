@@ -4,7 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavbarC.css'; // Archivo CSS para estilos personalizados
 import { NavLink } from 'react-router-dom';
-
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 const NavbarC = () => {
   return (
     <>   
@@ -16,8 +17,13 @@ const NavbarC = () => {
           <Nav className="ms-auto">
             <NavLink to="/" className="custom-link text-decoration-none">Inicio</NavLink>
             <NavLink to="/AboutUs" className="custom-link text-decoration-none">Sobre Nosotros</NavLink>
-            <NavLink to="/Contact" className="custom-link text-decoration-none">Contacto</NavLink>
+            
           </Nav>
+
+          <Form className="d-flex mx-3">
+            <Form.Control type="text" placeholder="Buscar..." />
+            <Button variant="primary" className="ms-2">Buscar</Button>
+          </Form>
 
           <Nav className="ms-auto">
             <NavLink to="/LoginPage" className="custom-link text-decoration-none">Iniciar Sesión</NavLink>
